@@ -20,10 +20,11 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 ### Requirements
 
 - [GQRX](https://gqrx.dk/)
+- Python (pip requirments included) (3.9 recommend)
 
 ### Let's get started (Gqrx Sdr Client)
 
-- Create virutal python env (3.9 recommend)
+- Create virutal python env
 - Install requirements (see script in ``python/``)
 - Enable remote control in gqrx
     - Set port ``7356``
