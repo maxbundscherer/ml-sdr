@@ -25,9 +25,7 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 
 - Create virutal python env (3.9 recommend)
 - Install requirements (see script in ``python/``)
-
 - Enable remote control in gqrx
     - Set port ``7356``
     - Add ``localhost``, ``0.0.0.0`` to allowed hosts
-
 - Run python-scripts in ``python/src/``
