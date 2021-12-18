@@ -14,13 +14,13 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 
 ### Features
 
-- Mode 1: Python sdr scanner (gqrx client)
-- Mode 2: Python sdr stuff ([pyrtlsdr](https://pyrtlsdr.readthedocs.io/en/latest/))
+- **Mode 1**: Python sdr scanner (gqrx client)
+- **Mode 2**: Python sdr stuff ([pyrtlsdr](https://pyrtlsdr.readthedocs.io/en/latest/))
 - tbd (work in progress)
 
 ### Requirements
 
-- [GQRX](https://gqrx.dk/)
+- [GQRX](https://gqrx.dk/) (only mode 1)
 - Python (pip requirments included) (3.9 recommend)
 
 ### Mode 1 (Gqrx Sdr Client)
