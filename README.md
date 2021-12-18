@@ -12,16 +12,19 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 
 ![](./doc-img/sdr.png)
 
+![](./doc-img/pyrtlsdr.png)
+
+
 ### Features
 
-- **Mode 1**: Python sdr scanner (gqrx client)
-- **Mode 2**: Python sdr stuff ([pyrtlsdr](https://pyrtlsdr.readthedocs.io/en/latest/))
+- **Mode 1**: Python sdr scanner controller ([gqrx](https://gqrx.dk/) client)
+- **Mode 2**: Python sdr experiments ([pyrtlsdr](https://pyrtlsdr.readthedocs.io/en/latest/) api)
 - tbd (work in progress)
 
 ### Requirements
 
 - [GQRX](https://gqrx.dk/) (only mode 1)
-- Python (pip requirments included) (3.9 recommend)
+- Python (pip requirements included) (3.9 recommend)
 
 ### Mode 1 (Gqrx Sdr Client)
 
@@ -34,4 +37,6 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 
 ### Mode 2 (pyrtlsdr)
 
-- tbd
+- Create virtual python env
+- Install requirements (see script in ``python/``)
+- Run python file in ``python/src/pyrtlsdr.py``
