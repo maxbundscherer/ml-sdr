@@ -14,7 +14,8 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 
 ### Features
 
-- Python sdr scanner (gqrx client)
+- Mode 1: Python sdr scanner (gqrx client)
+- Mode 2: Python sdr stuff ([pyrtlsdr](https://pyrtlsdr.readthedocs.io/en/latest/))
 - tbd (work in progress)
 
 ### Requirements
@@ -22,11 +23,15 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 - [GQRX](https://gqrx.dk/)
 - Python (pip requirments included) (3.9 recommend)
 
-### Let's get started (Gqrx Sdr Client)
+### Mode 1 (Gqrx Sdr Client)
 
-- Create virutal python env
+- Create virtual python env
 - Install requirements (see script in ``python/``)
 - Enable remote control in gqrx
     - Set port ``7356``
     - Add ``localhost``, ``0.0.0.0`` to allowed hosts
-- Run python-scripts in ``python/src/``
+- Run python file in ``python/src/gqrx-sdr-scanner.py``
+
+### Mode 2 (pyrtlsdr)
+
+- tbd
