@@ -2,7 +2,7 @@
 
 Just another approach to do machine learning stuff on software defined radio.
 
-``sdr - machine learing``
+``sdr - machine learning``
 
 [![shields.io](https://img.shields.io/badge/license-Apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
 
@@ -12,7 +12,7 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 
 ![](./doc-img/sdr.png)
 
-tbd
+tbd (work in progress)
 
 ### Let's get started
 
