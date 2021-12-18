@@ -1,4 +1,4 @@
-# SDR ML
+# ML SDR
 
 Just another approach to do machine learning stuff on software defined radio.
 
