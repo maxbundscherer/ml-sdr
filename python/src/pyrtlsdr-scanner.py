@@ -1,18 +1,16 @@
 import pyrtlsdr.pyrtlsdr_wrapper as sdr_wrapper
 import matplotlib.pyplot as plt
 
-c_sample_rate = 2.4e6
-c_bandwidth = 1.5e6
+c_sample_rate = 2e6
 c_gain = 100
 c_number_of_samples = 256*1024
 
-c_start_freq = 93e6
-c_scanner_delta = 1e6
-c_scanner_steps = 6
+c_start_freq = 91.0e6
+c_scanner_delta = int(c_sample_rate / 2)
+c_scanner_steps = 9
 
 sdr_client = sdr_wrapper.PyRtlSdrWrapper(
     sample_rate=c_sample_rate,
-    bandwidth=c_bandwidth,
     gain=c_gain
 )
 
@@ -25,9 +23,13 @@ for i in range(c_scanner_steps):
         number_of_samples=c_number_of_samples
     )
 
-    plt.psd(samples, NFFT=256, Fs=c_bandwidth/1e6, Fc=target_freq/1e6)
+    plt.psd(samples, NFFT=128, Fs=c_sample_rate/1e6, Fc=target_freq/1e6, alpha=.6)
     plt.xlabel('Frequency (MHz)')
     plt.ylabel('Relative power (dB)')
+    plt.ylim(-50, 10)
 
 sdr_client.destroy()
+plt.vlines(x=93.000e6/1e6, ymin=-50, ymax=10, linestyles="dotted")
+plt.vlines(x=93.700e6/1e6, ymin=-50, ymax=10, linestyles="dotted")
+plt.vlines(x=98.500e6/1e6, ymin=-50, ymax=10, linestyles="dotted")
 plt.show()
