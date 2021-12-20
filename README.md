@@ -39,4 +39,4 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 
 - Create virtual python env
 - Install requirements (see script in ``python/``)
-- Run python file in ``python/src/pyrtlsdr.py``
+- Run python file in ``python/src/pyrtlsdr-scanner.py``
