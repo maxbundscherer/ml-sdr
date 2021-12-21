@@ -1,5 +1,8 @@
 import pyrtlsdr.pyrtlsdr_wrapper as sdr_wrapper
+
 import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.mlab
 
 c_sample_rate = 2e6
 c_gain = 100
@@ -23,10 +26,15 @@ for i in range(c_scanner_steps):
         number_of_samples=c_number_of_samples
     )
 
-    plt.psd(samples, NFFT=128, Fs=c_sample_rate/1e6, Fc=target_freq/1e6, alpha=.6)
+    # plt.psd(samples, NFFT=128, Fs=c_sample_rate/1e6, Fc=target_freq/1e6, alpha=.6)
+    pxx, frequencies = matplotlib.mlab.psd(samples, NFFT=128, Fs=c_sample_rate/1e6)
+    pxx = 10.0*np.log10(pxx)
+    frequencies += target_freq/1e6
+    plt.plot(frequencies, pxx, alpha=0.6)
+
     plt.xlabel('Frequency (MHz)')
     plt.ylabel('Relative power (dB)')
-    plt.ylim(-50, 10)
+    plt.ylim(-30, 10)
 
 sdr_client.destroy()
 plt.vlines(x=93.000e6/1e6, ymin=-50, ymax=10, linestyles="dotted")
