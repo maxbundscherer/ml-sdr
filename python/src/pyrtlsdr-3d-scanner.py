@@ -15,7 +15,7 @@ c_scanner_steps = 9
 c_normalize_scan = True
 
 c_time_steps = 100
-c_warmup_steps = 10
+c_warmup_steps = 3
 
 sdr_client = sdr_wrapper.PyRtlSdrWrapper(
     sample_rate=c_sample_rate,
@@ -24,7 +24,13 @@ sdr_client = sdr_wrapper.PyRtlSdrWrapper(
 
 df_ret = pd.DataFrame()
 
-iteration = 0
+for _ in range(c_warmup_steps):
+
+    print("(Warmup Scan)")
+    _ = sdr_client.scan_freq(
+        center_freq=c_start_freq,
+        number_of_samples=c_number_of_samples
+    )
 
 for i_time_step in range(c_time_steps):
 
@@ -52,13 +58,8 @@ for i_time_step in range(c_time_steps):
         pxx = (pxx/10)-100
         t = float(i_time_step + (i_scan_step / c_scanner_steps))
 
-        if iteration >= c_warmup_steps:
-            df_t = pd.DataFrame({"freq": frequencies, "pxx": pxx, "t": t})
-            df_ret = df_ret.append(df_t)
-        else:
-            print("(Warmup phase)")
-
-        iteration = iteration + 1
+        df_t = pd.DataFrame({"freq": frequencies, "pxx": pxx, "t": t})
+        df_ret = df_ret.append(df_t)
 
 sdr_client.destroy()
 

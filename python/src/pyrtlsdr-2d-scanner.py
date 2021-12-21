@@ -11,12 +11,22 @@ c_number_of_samples = 256*1024
 c_start_freq = 91.0e6
 c_scanner_delta = int(c_sample_rate / 2)
 c_scanner_steps = 9
+c_warmup_steps = 3
+
 c_normalize_scan = False
 
 sdr_client = sdr_wrapper.PyRtlSdrWrapper(
     sample_rate=c_sample_rate,
     gain=c_gain
 )
+
+for _ in range(c_warmup_steps):
+
+    print("(Warmup Scan)")
+    _ = sdr_client.scan_freq(
+        center_freq=c_start_freq,
+        number_of_samples=c_number_of_samples
+    )
 
 for i in range(c_scanner_steps):
 
