@@ -25,7 +25,7 @@ df_ret = pd.DataFrame()
 for i_time_step in range(c_time_steps):
 
     print()
-    print("Scanning...", i_time_step, "from", c_time_steps)
+    print("Scanning...", i_time_step+1, "from", c_time_steps)
 
     for i_scan_step in range(c_scanner_steps):
 
