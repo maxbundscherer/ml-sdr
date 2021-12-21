@@ -1,6 +1,6 @@
 # ML SDR
 
-Just another approach to do machine learning stuff on software defined radio.
+Just another approach to do machine learning stuff on software defined radio. 2D/3D Scanner included.
 
 ``rtl - sdr - gqrx - pyrtlsdr - python - machine learning - scanner``
 
