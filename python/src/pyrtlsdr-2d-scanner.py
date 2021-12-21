@@ -11,6 +11,7 @@ c_number_of_samples = 256*1024
 c_start_freq = 91.0e6
 c_scanner_delta = int(c_sample_rate / 2)
 c_scanner_steps = 9
+c_normalize_scan = False
 
 sdr_client = sdr_wrapper.PyRtlSdrWrapper(
     sample_rate=c_sample_rate,
@@ -30,11 +31,16 @@ for i in range(c_scanner_steps):
     pxx, frequencies = matplotlib.mlab.psd(samples, NFFT=128, Fs=c_sample_rate/1e6)
     pxx = 10.0*np.log10(pxx)
     frequencies += target_freq/1e6
+    if c_normalize_scan:
+        # pxx/=np.std(pxx)
+        pxx -= np.mean(pxx)
+        plt.ylim(-10, 10)
+    else:
+        plt.ylim(-30, 10)
     plt.plot(frequencies, pxx, alpha=0.6)
 
     plt.xlabel('Frequency (MHz)')
     plt.ylabel('Relative power (dB)')
-    plt.ylim(-30, 10)
 
 sdr_client.destroy()
 plt.vlines(x=93.000e6/1e6, ymin=-50, ymax=10, linestyles="dotted")
