@@ -7,7 +7,7 @@ import matplotlib.mlab
 
 c_sample_rate = 2e6
 c_gain = 100
-c_number_of_samples = 1*1024  # TODO: Check - added for quick scan
+c_number_of_samples = 256*1024
 
 c_start_freq = 91.0e6
 c_scanner_delta = int(c_sample_rate / 2)
@@ -72,7 +72,7 @@ fig = go.Figure(data=[go.Scatter3d(
         size=10,
         symbol='cross',
         color=df_ret["pxx"],
-        colorscale='Inferno'
+        colorscale='Inferno_r'
     )
 )])
 
