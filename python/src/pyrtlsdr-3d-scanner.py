@@ -7,14 +7,14 @@ import matplotlib.mlab
 
 c_sample_rate = 2e6
 c_gain = 100
-c_number_of_samples = 1*1024  # TODO: Check - added for quick scan
+c_number_of_samples = 256*1024  # TODO: Check - added for quick scan SW
 
-c_start_freq = 91.0e6
+c_start_freq = 125e6+7.0e6
 c_scanner_delta = int(c_sample_rate / 2)
-c_scanner_steps = 9
+c_scanner_steps = 5
 c_normalize_scan = True
 
-c_time_steps = 100
+c_time_steps = 3
 c_warmup_steps = 3
 
 sdr_client = sdr_wrapper.PyRtlSdrWrapper(
@@ -46,9 +46,14 @@ for i_time_step in range(c_time_steps):
             number_of_samples=c_number_of_samples
         )
 
-        pxx, frequencies = matplotlib.mlab.psd(samples, NFFT=64, Fs=c_sample_rate/1e6)
+        pxx, frequencies = matplotlib.mlab.psd(samples, NFFT=2048, Fs=c_sample_rate/1e6)
         pxx = 10.0*np.log10(pxx)
-        frequencies += target_freq/1e6
+        frequencies += (target_freq-125e6)/1e6
+
+        # i_start = np.nonzero(frequencies > 7.0)[0][0]
+        # i_stop = np.nonzero(frequencies < 7.1)[-1][-1]
+        # pxx = pxx[i_start:i_stop]
+        # frequencies = frequencies[i_start:i_stop]
 
         if c_normalize_scan:
             # pxx/=np.std(pxx)
