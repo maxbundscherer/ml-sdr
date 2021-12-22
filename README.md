@@ -26,13 +26,14 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 
 - **Mode 1**: Python sdr scanner controller ([gqrx](https://gqrx.dk/) client)
 - **Mode 2**: Python sdr experiments (2d and 3d scanner) ([pyrtlsdr](https://pyrtlsdr.readthedocs.io/en/latest/) api)
+- **Mode 3**: Python sdr sender locator ([pyrtlsdr](https://pyrtlsdr.readthedocs.io/en/latest/) api and gqrx client)
 
 ### Requirements
 
 - [GQRX](https://gqrx.dk/) (only mode 1)
 - Python (pip requirements included) (3.9 recommend)
 
-### Mode 1 (Gqrx Sdr Client)
+### Mode 1: GQRX Client
 
 - Create virtual python env
 - Install requirements (see script in ``python/``)
@@ -41,9 +42,22 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
     - Add ``localhost``, ``0.0.0.0`` to allowed hosts
 - Run python file in ``python/src/gqrx-sdr-scanner.py``
 
-### Mode 2 (pyrtlsdr)
+### Mode 2: 2D/3D Scanner (pyrtlsdr)
 
 - Create virtual python env
 - Install requirements (see script in ``python/``)
 - **2D Scan**: Run python file in ``python/src/pyrtlsdr-2d-scanner.py``
 - **3D Scan**: Run python file in ``python/src/pyrtlsdr-3d-scanner.py``
+
+### Mode 3: Sender locator (pyrtlsdr)
+
+![](./doc-img/loc1.png)
+
+![](./doc-img/loc2.png)
+
+- Create virtual python env
+- Install requirements (see script in ``python/``)
+- Enable remote control in gqrx
+  - Set port ``7356``
+  - Add ``localhost``, ``0.0.0.0`` to allowed hosts
+- Run python file in ``python/src/pyrtlsdr-sender-locator.py``
