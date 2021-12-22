@@ -30,7 +30,7 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 
 ### Requirements
 
-- [GQRX](https://gqrx.dk/) (only mode 1)
+- [GQRX](https://gqrx.dk/) (only mode 1 and 3 - comfort)
 - Python (pip requirements included) (3.9 recommend)
 
 ### Mode 1: GQRX Client
