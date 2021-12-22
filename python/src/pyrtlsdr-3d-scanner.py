@@ -7,7 +7,7 @@ import matplotlib.mlab
 
 c_sample_rate = 2e6
 c_gain = 100
-c_number_of_samples = 256*1024
+c_number_of_samples = 128*1024  # TODO: Check - decrease input samples for quicker scan
 
 c_start_freq = 91.0e6
 c_scanner_delta = int(c_sample_rate / 2)
