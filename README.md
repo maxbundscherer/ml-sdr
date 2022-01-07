@@ -27,6 +27,7 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 - **Mode 1**: Python sdr scanner controller ([gqrx](https://gqrx.dk/) client)
 - **Mode 2**: Python sdr experiments (2d and 3d scanner) ([pyrtlsdr](https://pyrtlsdr.readthedocs.io/en/latest/) api)
 - **Mode 3**: Python sdr sender locator ([pyrtlsdr](https://pyrtlsdr.readthedocs.io/en/latest/) api and gqrx client)
+- **Mode 4**: Python wideband scanner ([rtlsdr-wwb-scanner](https://github.com/nocarryr/rtlsdr-wwb-scanner) client)
 
 ### Requirements
 
@@ -61,3 +62,9 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
   - Set port ``7356``
   - Add ``localhost``, ``0.0.0.0`` to allowed hosts
 - Run python file in ``python/src/pyrtlsdr-sender-locator.py``
+
+### Mode 4: Wideband scanner (rtlsdr-wwb-scanner)
+
+- Create virtual python env
+- Install wb-scanner with ``pip install rtlsdr-wwb-scanner``
+- Run with ``wwb_scanner-ui``
