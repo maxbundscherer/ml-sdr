@@ -148,7 +148,8 @@ for i_scanner_iteration in range(c_scanner_iterations):
 
     if not c_analyse_plot_each_step and c_analyse_enable_plot:
         plt.show()
-        plt.close("all")
+
+    plt.close("all")
 
     # Filter out similarly frequencies
     candidates_per_iteration = np.array(candidates_per_iteration)
@@ -186,6 +187,10 @@ print("Got total candidates", len(candidates_flat_global))
 candidates_counted = collections.Counter(candidates_flat_global)
 
 print("Got candidates counted", candidates_counted)
+
+plt.bar(candidates_counted.keys(), candidates_counted.values(), width=0.1)
+plt.title("Candidates counted (pre filter)")
+plt.show()
 
 candidates_gqrx = []
 
