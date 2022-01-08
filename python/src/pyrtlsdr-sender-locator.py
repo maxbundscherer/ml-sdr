@@ -201,11 +201,11 @@ for ret_candidate in candidates_counted:
 
 candidates_gqrx.sort()
 
-candidates_counted_gqrx = collections.Counter(candidates_gqrx)
-
-plt.bar(candidates_counted_gqrx.keys(), candidates_counted_gqrx.values(), width=0.1)
-plt.title("Candidates counted (after filter)")
-plt.show()
+# candidates_counted_gqrx = collections.Counter(candidates_gqrx)
+#
+# plt.bar(candidates_counted_gqrx.keys(), candidates_counted_gqrx.values(), width=0.1)
+# plt.title("Candidates counted (after filter)")
+# plt.show()
 
 print("Got candidates after counter filter", len(candidates_gqrx), "(filter from " + str(c_eval_filter_min_count) + " to " + str(c_eval_filter_max_count) + ")")
 
