@@ -209,6 +209,8 @@ plt.show()
 
 print("Got candidates after counter filter", len(candidates_gqrx), "(filter from " + str(c_eval_filter_min_count) + " to " + str(c_eval_filter_max_count) + ")")
 
+print("RAW", candidates_gqrx)
+
 if c_gqrx_client_enable:
 
     # Start GQRX
