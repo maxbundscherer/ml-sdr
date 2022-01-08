@@ -157,10 +157,9 @@ for i_scanner_iteration in range(c_scanner_iterations):
         i_filter_each_iteration = np.argsort(candidates_per_iteration.flat)
         d_filter_each_iteration = np.append(True, np.diff(candidates_per_iteration.flat[i_filter_each_iteration]))
         g_candidates = candidates_per_iteration.flat[i_filter_each_iteration[d_filter_each_iteration > c_analyse_filter_each_iteration_TOL]]
-        print()
-        print("Detected candidates after iteration filter", can_before_filter_it, "from", len(candidates_per_iteration))
+        print("\nDetected candidates after iteration filter", can_before_filter_it, "from", len(candidates_per_iteration))
     else:
-        print("Detected candidates in iteration", len(candidates_per_iteration))
+        print("\nDetected candidates in iteration", len(candidates_per_iteration))
 
     candidates_global.append(candidates_per_iteration)
 
