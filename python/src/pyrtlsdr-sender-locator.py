@@ -24,7 +24,7 @@ c_analyse_psd_nfft = 128
 c_analyse_prepare_normalize = False
 c_analyse_prepare_diff = False
 c_analyse_threshold_std_factor = 2
-c_analyse_fg_round_decimals = 4
+c_analyse_fg_round_decimals = 3
 
 c_analyse_enable_plot = True
 c_analyse_plot_each_step = False
