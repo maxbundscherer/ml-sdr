@@ -77,3 +77,9 @@ Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 - See git repo [gqrx-scanner](https://github.com/neural75/gqrx-scanner)
 - Read install instructions
 - Run ``./gqrx-scanner --min 430000000 --max 431000000 -d 3000``
+
+#### Wideband scanner (qspectrumanalyzer)
+
+- See git repo [qspectrumanalyzer](https://github.com/xmikos/qspectrumanalyzer)
+- Read install instructions
+- Run ``qspectrumanalyzer``

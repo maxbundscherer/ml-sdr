@@ -1,3 +1,7 @@
+pyqtgraph
+#Qt.py
+PyQt5
+qspectrumanalyzer
 matplotlib
 pyrtlsdr
 plotly
