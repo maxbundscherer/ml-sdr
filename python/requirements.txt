@@ -1,3 +1,4 @@
+pyhamtools
 pyqtgraph
 #Qt.py
 PyQt5
