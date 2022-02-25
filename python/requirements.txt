@@ -1,4 +1,3 @@
-osm-runner
 jupyterlab
 maidenhead
 pyhamtools
