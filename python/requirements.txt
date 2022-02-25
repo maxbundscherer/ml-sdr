@@ -1,3 +1,4 @@
+cartopy
 jupyterlab
 maidenhead
 pyhamtools
