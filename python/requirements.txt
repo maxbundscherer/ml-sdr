@@ -1,3 +1,4 @@
+kaleido
 geopandas
 jupyterlab
 maidenhead
